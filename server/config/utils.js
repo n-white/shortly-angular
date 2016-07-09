@@ -19,6 +19,21 @@ module.exports = {
     });
   },
 
+  getFavIcon: function(url) {
+    return Q.Promise(function(resolve, reject) {
+      request(url + '/favicon.ico', function(err, res, html) {
+        if (err) {
+          reject(err);
+        } else {
+          var tag = /<img>(.*)<\/img>/;
+          var match = html.match(tag);
+          var title = match ? match[1] : url;
+          resolve(title);
+        }
+      });
+    });
+  },
+
   isValidUrl: function (url) {
     return url.match(rValidUrl);
   }

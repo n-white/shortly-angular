@@ -1,13 +1,12 @@
 <div id='container'>
   <!-- Your html here -->
   
-  <div ng-init="linkList = []">
-    <input class="input" ng-model="newLink">
-    <button ng-click="linkList.push(newLink); newLink = ''">add</button>
-  </div>
-  <ul>
-    <li ng-repeat="link in linkList track by $index">{{ link }}</li>
-  </ul>
+    <div class="link" ng-repeat="link in data.links">
+      <img class="img" ng-src="{{link.url}}/favicon.ico">
+      <div class="title">{{ link.title }}</div>
+      <span  class="visits count">Visits: {{ link.visits }}</span>
+      <a class="original" ng-href="{{ link.url }}">{{ link.url }}>
+      <div  class="">{{ link.code }}</div>
+    </div>
 
-  </div>
 </div>
