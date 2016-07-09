@@ -29,10 +29,10 @@ angular.module('shortly.auth', [])
   };
 })
 
-.config(function($routeProvider) {
-  $routeProvider
-    .when('/', {
-      templateUrl: './signin.html',
-      controller: 'AuthController'
-    });
-});
+// .config(function($routeProvider) {
+//   $routeProvider
+//     .when('/', {
+//       templateUrl: './signin.html',
+//       controller: 'AuthController'
+//     });
+// });

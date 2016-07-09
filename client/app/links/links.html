@@ -1,8 +1,13 @@
 <div id='container'>
   <!-- Your html here -->
+  
+  <div ng-init="linkList = []">
+    <input class="input" ng-model="newLink">
+    <button ng-click="linkList.push(newLink); newLink = ''">add</button>
+  </div>
+  <ul>
+    <li ng-repeat="link in linkList track by $index">{{ link }}</li>
+  </ul>
 
-  <h1>links<h1>
-  <div ng-controller="LinksController">
-  <li ng-repeat="(links, data) in data">{{data}}</li>
   </div>
 </div>

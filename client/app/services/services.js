@@ -13,13 +13,18 @@ angular.module('shortly.services', [])
   };
 
   var addOne = function(link) {
+    console.log('added onnnnnneeeeeeee', link);
     return $http({
       method: 'POST',
-      url: '/api/links',
-      data: link
+      url: '/api/links/',
+      data: {url:link}
     })
     .then(function(resp) {
+      console.log(resp);
       return resp;
+    })
+    .catch(function(err) {
+      console.log(err);
     });
   };
 
