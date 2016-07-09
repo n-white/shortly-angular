@@ -27,4 +27,12 @@ angular.module('shortly.auth', [])
         console.error(error);
       });
   };
+})
+
+.config(function($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: './signin.html',
+      controller: 'AuthController'
+    });
 });
